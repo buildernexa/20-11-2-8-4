@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}History{% endblock %}
+{% block body %}
+<section class="card">
+  <div class="section-head">
+    <h1 class="h1-sm">HISTORY</h1>
+    <button class="btn btn-sm" id="clear-hist">CLEAR</button>
+  </div>
+  <div class="table-wrap">
+    <table class="neo-table">
+      <thead><tr><th>WAKTU</th><th>JUDUL</th><th>AUTHOR</th><th>SUMBER</th><th>STATUS</th></tr></thead>
+      <tbody>
+      {% for url,title,author,source,status,ts in rows %}
+        <tr>
+          <td class="mono">{{ ts }}</td>
+          <td class="trunc"><a href="{{ url }}" target="_blank" rel="noopener">{{ title or "-" }}</a></td>
+          <td>@{{ author }}</td>
+          <td><span class="tag tag-sm">{{ source }}</span></td>
+          <td><span class="tag tag-sm {{ 'tag-ok' if status=='ok' else 'tag-err' }}">{{ status }}</span></td>
+        </tr>
+      {% else %}
+        <tr><td colspan="5" class="empty">Belum ada riwayat.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script>
+document.getElementById("clear-hist").addEventListener("click", async () => {
+  if (!confirm("Hapus riwayat?")) return;
+  await fetch("/api/history", {method: "DELETE"});
+  location.reload();
+});
+</script>{% endblock %}
