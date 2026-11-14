@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id" data-theme="sunset" data-density="comfortable">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}TT/ST{% endblock %} · TikTok Studio</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a href="/" class="logo">TT<span>/</span>ST</a>
+  <nav class="nav">
+    <a href="/" class="nav-link {% if active=='home' %}on{% endif %}">HOME</a>
+    <a href="/history" class="nav-link {% if active=='history' %}on{% endif %}">HISTORY</a>
+    <a href="/themes" class="nav-link {% if active=='themes' %}on{% endif %}">THEMES</a>
+    <a href="/about" class="nav-link {% if active=='about' %}on{% endif %}">ABOUT</a>
+  </nav>
+  <div class="theme-picker" id="theme-picker"></div>
+</header>
+<main class="page">{% block body %}{% endblock %}</main>
+<footer class="foot">
+  <span>TT/ST · v2.0</span>
+  <span id="clock"></span>
+</footer>
+<script src="/static/app.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
