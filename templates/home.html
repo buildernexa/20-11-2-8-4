@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<section class="card hero">
+  <div class="hero-label">// RESOLVE · PULL · ARCHIVE</div>
+  <h1>PASTE.<br>RESOLVE.<br>PULL.</h1>
+  <p class="hint">URL TikTok · 5 sumber rotasi · no-watermark bila tersedia</p>
+  <div class="input-row">
+    <input id="url" class="neo-input" type="url" placeholder="https://www.tiktok.com/@user/video/..." autocomplete="off" spellcheck="false">
+    <button id="go" class="btn btn-primary">RESOLVE</button>
+  </div>
+  <div class="status" id="status"></div>
+</section>
+
+<section class="card result" id="result" hidden>
+  <div class="thumb-wrap"><img id="thumb" class="thumb" alt=""></div>
+  <div class="meta">
+    <div class="meta-title" id="title"></div>
+    <div class="meta-row">
+      <span class="tag" id="author"></span>
+      <span class="tag" id="source"></span>
+      <span class="tag" id="dur"></span>
+    </div>
+    <div class="source-list" id="sources"></div>
+  </div>
+  <div class="actions">
+    <button id="dl" class="btn btn-primary">DOWNLOAD MP4</button>
+    <button id="copy" class="btn">COPY URL</button>
+    <button id="again" class="btn">RESET</button>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="/static/app.js"></script>{% endblock %}
