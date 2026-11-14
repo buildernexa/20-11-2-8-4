@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Themes{% endblock %}
+{% block body %}
+<section class="card">
+  <div class="section-head"><h1 class="h1-sm">THEMES</h1></div>
+  <p class="hint">4 palet · 3 density · pilih langsung</p>
+
+  <div class="theme-grid" id="theme-grid">
+    <button class="theme-tile" data-theme-set="sunset" data-label="SUNSET">SUNSET</button>
+    <button class="theme-tile" data-theme-set="mint"   data-label="MINT">MINT</button>
+    <button class="theme-tile" data-theme-set="ink"    data-label="INK">INK</button>
+    <button class="theme-tile" data-theme-set="acid"   data-label="ACID">ACID</button>
+    <button class="theme-tile" data-theme-set="paper"  data-label="PAPER">PAPER</button>
+    <button class="theme-tile" data-theme-set="royal"  data-label="ROYAL">ROYAL</button>
+    <button class="theme-tile" data-theme-set="candy"  data-label="CANDY">CANDY</button>
+    <button class="theme-tile" data-theme-set="steel"  data-label="STEEL">STEEL</button>
+  </div>
+
+  <div class="section-head" style="margin-top:24px"><h2 class="h1-sm">DENSITY</h2></div>
+  <div class="row-gap">
+    <button class="btn btn-sm" data-density-set="compact">COMPACT</button>
+    <button class="btn btn-sm" data-density-set="comfortable">COMFORTABLE</button>
+    <button class="btn btn-sm" data-density-set="roomy">ROOMY</button>
+  </div>
+</section>
+{% endblock %}
