@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block body %}
+<section class="card">
+  <h1 class="h1-sm">ABOUT</h1>
+  <p class="hint">TT/ST · multi-source TikTok resolver</p>
+  <ul class="about-list">
+    <li><b>Sources</b> — yt-dlp · tikwm · douyin-mirror · snaptik · musicaldown</li>
+    <li><b>Rotation</b> — first success wins, all failures logged</li>
+    <li><b>Storage</b> — SQLite lokal, tidak keluar</li>
+    <li><b>No tracking</b> · <b>no auth</b> · <b>no ads</b></li>
+    <li><b>License</b> — MIT</li>
+  </ul>
+  <p class="hint" style="margin-top:16px">Failure is honest here. Bila semua sumber down, UI bilang. Bila satu down, fallback jalan.</p>
+</section>
+{% endblock %}
